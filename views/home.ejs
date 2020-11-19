@@ -1,0 +1,13 @@
+<%- include("partial/header") %>
+<h1>HOME</h1>
+<p><%=startingContent%></p>
+
+<% allpost.forEach(function(i){ %>
+  <h1><%=i.title%></h1>
+  <%   var length = 100; %>
+<%  const content = i.post; %>
+<% const myTruncatedString = content.substring(0,length); %>
+  <p><%=myTruncatedString%><a href="/posts/<%=i._id%>"> Read more</a></p>
+<% }); %>
+
+<%- include("partial/footer") %>
